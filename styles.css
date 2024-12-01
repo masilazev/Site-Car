@@ -79,8 +79,9 @@ section {
                 }
 
                 & h2 {
-                   font-size:4em; 
-                   line-height: 1em;
+                    font-size: 4em;
+                    line-height: 1em;
+                    font-family: "League Gothic", sans-serif;
                 }
 
                 & .description {
@@ -100,6 +101,7 @@ section {
                     color: #000;
                     cursor: pointer;
                     font-weight: bold;
+                    font-family: "League Gothic", sans-serif;
                 }
             }
         }
@@ -163,6 +165,7 @@ section {
 
         & .number {
             font-size: 5em;
+            font-family: "League Gothic", sans-serif;
         }
 
         & ul {
@@ -184,3 +187,68 @@ section {
     }
 }
 
+section {
+    & .list {
+        & .item {
+            transform: translateX(100vw);
+            transition: 0.5s;
+            opacity: 0;
+
+            &.car-img {
+                & img {
+                    transform: rotate(0);
+                    transition: 0.5s;
+                    transition-delay: 0.3s;
+                }
+            }
+
+            & .content {
+
+                & .car-information,
+                h2,
+                .description,
+                .information {
+                    transform: translateX(200px);
+                    transition: 0.7s;
+                    transition-delay: 0.3s;
+                    opacity: 0;
+                }
+
+                & h2 {
+                    transition-delay: 0.5s;
+                }
+
+                & .description {
+                    transition-delay: 0.7s;
+                }
+
+                & .information {
+                    transition-delay: 0.9s;
+                }
+            }
+        }
+
+        & .active {
+            transform: translateX(0);
+            transition: 0.5s;
+            opacity: 1;
+
+            &.car-img {
+                & img {
+                    transform: rotate(-20deg);
+                }
+            }
+
+            & .content {
+
+                & .car-information,
+                h2,
+                .description,
+                .information {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
